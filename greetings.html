@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Greetings</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #a7b1a7;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #ffffff;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .image {
+      cursor: pointer;
+      width: 300px; /* Adjust the width as needed */
+      height: 200px; /* Adjust the height as needed */
+      object-fit: cover; /* Maintain aspect ratio and cover the container */
+      border-radius: 8px; /* Add border-radius for a rounded appearance */
+    }
+
+    #definitionModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #b41d1d;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Christmas Greetings</h1>
+  <h2><i>Merry Advance Christmas Malwine in this way i used my skills to create a small gift for you i pray good and wonderful christmas celebration to you and your family</i></h2>
+
+  <div class="gallery">
+    <img class="image" src="moon.jpg" alt="Christmas Photo 1" onclick="showDefinition('photo1')">
+    <img class="image" src="flower.jpg" alt="Christmas Photo 2" onclick="showDefinition('photo2')">
+     <img class="image" src="white.jpg" alt="Christmas Photo 3" onclick="showDefinition('photo3')">
+     <img class="image" src="tree.jpg" alt="Christmas Photo 3" onclick="showDefinition('photo4')">
+     <img class="image" src="hally.jpg" alt="Christmas Photo 3" onclick="showDefinition('photo5')">
+    <!-- Add more photos as needed -->
+  </div>
+
+  <div id="definitionModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDefinitionModal()">&times;</span>
+      <p id="definitionText"></p>
+    </div>
+  </div>
+
+  <script>
+    function showDefinition(photoId) {
+      var modal = document.getElementById('definitionModal');
+      var definitionText = document.getElementById('definitionText');
+
+      // Define your photo definitions here
+      var definitions = {
+        'photo1': 'You are the moon from afar even when i am troubledi always see the moon im delighted',
+        'photo2': 'Just like a flower you are always blooming and your energy and positivity always go through the letters ',
+        'photo3': 'just a plain white flower its not just simple but had a pure heart as white as snow',
+        'photo4': 'Christmas is the most wonderful but busiest celebration in every year',
+        'photo5': 'we are going to celebrate christmas we a pup in our besides ',
+        
+        // Add more definitions as needed
+      };
+
+      // Set the definition text based on the clicked photo
+      definitionText.textContent = definitions[photoId];
+
+      // Display the modal
+      modal.style.display = 'flex';
+    }
+
+    function closeDefinitionModal() {
+      var modal = document.getElementById('definitionModal');
+      modal.style.display = 'none';
+    }
+
+    // Close the modal if the user clicks outside of it
+    window.onclick = function (event) {
+      var modal = document.getElementById('definitionModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
